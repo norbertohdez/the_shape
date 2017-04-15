@@ -1,0 +1,162 @@
+@import '../../styles/partials/vars';
+@import '../../styles/partials/mixins';
+
+/* Search & Hamburguer menu 'top-menu'
+----------------------------------------- */
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-menu__btn {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+}
+
+
+/* Hamburguer icon
+----------------------------------------- */
+
+.i-nav {
+  transition: $responsiveAnimation;;
+  position: absolute;
+  display: block;
+  width: 60%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  margin-top: -30%;
+  margin-left: -30%;
+}
+
+.i-nav__str {
+  transition: $responsiveAnimation;;
+  background: $blue;
+  height: $borderWidth;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+.i-nav__str--1 {
+  top: 1px;
+}
+
+.i-nav__str--2 {
+  width: 80%;
+  top: 50%;
+  margin-top: -2.5px;
+}
+
+.i-nav__str--3 {
+  width: 60%;
+  bottom: 1px;
+}
+
+
+/* Hamburguer icon animation
+----------------------------------------- */
+
+.no-touch:not(.open-nav) .top-menu__btn:hover .i-nav__str--3 {
+  width: 100%;
+}
+
+.no-touch:not(.open-nav) .top-menu__btn:hover .i-nav__str--1 {
+  width: 60%;
+}
+
+
+/* Arrow icon
+----------------------------------------- */
+
+.open-nav .i-nav__str--1 {
+  width: 80%;
+  transform: rotate(-45deg);
+  top: 5px;
+}
+
+.open-nav .i-nav__str--2 {
+  width: 100%;
+  left: 7px;
+}
+
+.open-nav .i-nav__str--3 {
+  width: 80%;
+  transform: rotate(45deg);
+  bottom: 5px;
+}
+
+
+/* Arrow icon mobile (it rotates to point up)
+----------------------------------------- */
+
+@include mobile_size {
+  .open-nav .top-menu__btn-nav .i-nav {
+    transform: rotate(90deg) translateX(-10%);
+  }
+}
+
+
+/* Zoom icon mobile
+----------------------------------------- */
+
+.i-nav__zoom {
+  transition: $responsiveAnimation;;
+  display: block;
+  position: absolute;
+}
+
+.i-nav__zoom--handle {
+  background: $blue;
+  height: $borderWidth;
+  width: 15px;
+  right: -3px;
+  bottom: -2px;
+  transform: rotate(45deg);
+}
+
+.i-nav__zoom--circle {
+  border: $borderWidth solid $blue;
+  height: 22px;
+  width: 22px;
+  left: -5px;
+  top: -3px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.i-nav__zoom--circle::after {
+  position: absolute;
+  left: 115%;
+  width: 1000%;
+  height: 100%;
+  color: $blue;
+  content: $lipsum + " " + $lipsum + " " + $lipsum;
+  font-size: 0.25em;
+  line-height: 1.5em;
+  text-align: right;
+  transition: opacity 0.8s ease-out;
+  opacity: 0;
+}
+
+.no-touch:not(.open-nav) .top-menu__btn:hover .i-nav__zoom--circle::after {
+  animation: zoom-moves 2s linear none infinite alternate;
+  opacity: 1;
+}
+
+@keyframes zoom-moves {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: -900%;
+  }
+}

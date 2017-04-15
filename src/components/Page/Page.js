@@ -12,7 +12,7 @@ class Page extends Component {
     return (
       <div>
         <div className="column-action">
-         <Header toggleNav={this.props.toggleNav} />
+         <Header toggleNav={this.props.toggleNav} toggleSearchBar={this.props.toggleSearchBar} />
         </div>
         <div className="column-content">
           <h1>This is the Home Page</h1>
@@ -27,8 +27,9 @@ class Page extends Component {
 }
 
 Page.propTypes = {
-  className: PropTypes.string,
-  toggleNav: PropTypes.func
+  className:       PropTypes.string,
+  toggleNav:       PropTypes.func,
+  toggleSearchBar: PropTypes.func
 };
 
 export default Page;
