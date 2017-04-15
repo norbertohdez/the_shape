@@ -1,0 +1,16 @@
+@import '../../../styles/partials/vars';
+
+.apolo__svg {
+  margin: 4.5em 3em 0;
+}
+
+/* Open Nav
+----------------------------------------- */
+
+.open-nav .apolo__svg {
+  fill: #666;
+}
+
+.open-nav .apolo__price-line {
+  color: $white;
+}

@@ -1,0 +1,563 @@
+@import 'partials/vars';
+@import 'partials/mixins';
+
+/* --------------------------------------
+ * Helpers 'tachyons-like'
+ * --------------------------------------
+ */
+
+/* Display
+----------------------------------------- */
+
+.l-dn {
+  display: none;
+}
+
+.l-db {
+  display: block;
+}
+
+.l-dib {
+  display: inline-block;
+}
+
+.l-hm { // hide mobile
+  @include mobile_size {
+    display: none !important;
+  }
+}
+
+.l-sm { // show mobile
+  display: none;
+  @include mobile_size {
+    display: block !important;
+  }
+}
+
+/* Box-sizing
+----------------------------------------- */
+
+.l-bb {
+  box-sizing: border-box;
+}
+
+
+/* Height
+----------------------------------------- */
+
+.l-hmin-100vh {
+  min-height: 100vh;
+}
+
+.l-h100vh {
+  height: 100vh;
+}
+
+.l-h100 {
+  height: 100%;
+}
+
+/* positioning
+---------------------------------------- */
+
+.l-pr {
+  position: relative;
+}
+
+.l-pa {
+  position: absolute;
+}
+
+.l-pf {
+  position: fixed;
+}
+
+
+/* Margin
+----------------------------------------- */
+
+// Consistent margin
+
+.l-m0 {
+  margin: 0;
+}
+
+.l-m--xs {
+  margin: 0.25em;
+}
+
+.l-m1 {
+  margin: 0.5em;
+}
+
+.l-m2 {
+  margin: 1em;
+}
+
+.l-m3 {
+  margin: 1.5em;
+}
+
+// Bottom
+
+.l-mb0 {
+  margin-bottom: 0;
+}
+
+.l-mb1 {
+  margin-bottom: 0.5em;
+}
+
+.l-mb2 {
+  margin-bottom: 1em;
+}
+
+.l-mb3 {
+  margin-bottom: 1.5em;
+}
+
+.l-mb4 {
+  margin-bottom: 2em;
+}
+
+.l-mb5 {
+  margin-bottom: 2.5em;
+}
+
+// Top
+
+.l-mt0 {
+  margin-top: 0;
+}
+
+.l-mt1 {
+  margin-top: 0.5em;
+}
+
+.l-mt2 {
+  margin-top: 1em;
+}
+
+.l-mt3 {
+  margin-top: 1.5em;
+}
+
+.l-mt4 {
+  margin-top: 2em;
+}
+
+// Left
+
+.l-ml0 {
+  margin-left: 0;
+}
+
+.l-ml--xs {
+  margin-left: 0.25em;
+}
+
+.l-ml1 {
+  margin-left: 0.5em;
+}
+
+.l-ml2 {
+  margin-left: 1em;
+}
+
+.l-ml3 {
+  margin-left: 1.5em;
+}
+
+// Right
+
+.l-mr--xs {
+  margin-right: 0.25em;
+}
+
+.l-mr1 {
+  margin-right: 0.5em;
+}
+
+.l-mr2 {
+  margin-right: 1em;
+}
+
+.l-mr3 {
+  margin-right: 1.5em;
+}
+
+.l-mr4 {
+  margin-right: 2em;
+}
+
+// Vertical
+
+.l-mv1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.l-mv2 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.l-mv3 {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.l-mv4 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+// Horizontal
+
+.l-mh-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-mh4 {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+
+/* padding
+-------------------------- */
+
+// Consisten padding
+
+.l-p1 {
+  padding: 0.5em;
+}
+
+.l-p2 {
+  padding: 1em;
+}
+
+.l-p3 {
+  padding: 1.5em;
+}
+
+.l-p4 {
+  padding: 2em;
+}
+
+.l-p5 {
+  padding: 2.5em;
+}
+
+.l-p--xs {
+  padding: 0.25em;
+}
+
+// Bottom
+
+.l-pb2 {
+  padding-bottom: 1em;
+}
+
+.l-pb3 {
+  padding-bottom: 1.5em;
+}
+
+.l-pb4 {
+  padding-bottom: 2em;
+}
+
+.l-pb5 {
+  padding-bottom: 2.5em;
+}
+
+// Top
+
+.l-pt1 {
+  padding-top: 0.5em;
+}
+
+.l-pt2 {
+  padding-top: 1em;
+}
+
+.l-pt3 {
+  padding-top: 1.5em;
+}
+
+.l-pt4 {
+  padding-top: 2em;
+}
+
+.l-pt5 {
+  padding-top: 2.5em;
+}
+
+// Left
+
+.l-pl1 {
+  padding-left: 0.5em;
+}
+
+.l-pl2 {
+  padding-left: 1em;
+}
+
+.l-pl3 {
+  padding-left: 1.5em;
+}
+
+// Vertical
+
+.l-pv1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.l-pv2 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.l-pv3 {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.l-pv--xs {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+
+/* Typography
+----------------------------------------- */
+
+.t-fam {
+  font-family: $fontFamilyMain;
+}
+
+.t-wn {
+  font-weight: normal;
+}
+
+.t-accessible {
+  position: absolute;
+  top: -9999em;
+  font-size: 0.01rem;
+  height: 1px;
+  width: 1px;
+}
+
+.t-ac {
+  text-align: center;
+}
+
+.t-al {
+  text-align: left;
+}
+
+.t-up {
+  text-transform: uppercase;
+}
+
+.t-c-white {
+  color: $white;
+}
+
+.t-c-gray {
+  color: $gray;
+}
+
+.t-scale-5u {
+  font-size: 1.5em;
+}
+
+.t-scale-25u {
+  font-size: 1.25em;
+}
+
+.t-scale-1 {
+  font-size: 1em;
+}
+
+.t-scale-75d {
+  font-size: 0.75em;
+}
+
+.t-scale-5d {
+  font-size: 0.5em;
+}
+
+
+/* SVG fills
+----------------------------------------- */
+
+.fill-blue {
+  fill: $blue;
+}
+
+.fill-white {
+  fill: $white;
+}
+
+.fill-gray {
+  fill: $grayDark;
+}
+
+
+/* Backgrounds
+----------------------------------------- */
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-blue-light {
+  background-color: $blueLight;
+}
+
+.bg-dark {
+  background-color: $dark;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-lines-gray {
+  background: url(../img/bg_gray-lines.gif);
+  background-size: 5px 5px;
+}
+
+.bg-lines-blue {
+  background: url(../img/bg_blue-lines.gif);
+  background-size: 5px 5px;
+}
+
+
+/* Borders
+----------------------------------------- */
+
+.l-b-radius {
+  border-radius: $borderRadius;
+}
+
+// Regular wide border
+
+.l-bt {
+  border-top: $border;
+}
+
+.l-bbt {
+  border-bottom: $border;
+}
+
+.l-b {
+  border: $border;
+}
+
+.l-b-sec {
+  border: $borderSecondary;
+}
+
+// Separators
+
+.l-bb-sep {
+  border-bottom: $borderSeparator;
+}
+
+.l-bt-sep {
+  border-top: $borderSeparator;
+}
+
+.l-br-sep {
+  border-right: $borderSeparator;
+}
+
+.l-bl-sep {
+  border-left: $borderSeparator;
+}
+
+.l-b-sep {
+  border: $borderSeparator;
+}
+
+
+/* Animation
+----------------------------------------- */
+
+// Responsive animation for layout
+
+.l-ra {
+  transition: $responsiveAnimation;
+}
+
+
+/* Vertical align
+----------------------------------------- */
+
+.l-va-m {
+  vertical-align: middle;
+}
+
+
+/* flex settings
+---------------------------------------- */
+
+.l-flex {
+  display: flex;
+}
+
+.l-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.l-flex-jc {
+  justify-content: center;
+}
+
+.l-flex-dr {
+  flex-direction: row;
+}
+
+.l-flex-dc {
+  flex-direction: column;
+}
+
+.l-flex-stretch {
+  align-items: stretch;
+}
+
+
+/* width
+---------------------------------------- */
+
+.l-w20 {
+  width: 20%;
+}
+
+.l-w25 {
+  width: 25%;
+}
+
+.l-w50 {
+  width: 50%;
+}
+
+.l-w100 {
+  width: 100%;
+}
+
+
+/* overflow
+---------------------------------------- */
+
+.l-oh {
+  overflow: hidden;
+}

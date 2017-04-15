@@ -1,0 +1,93 @@
+@import 'partials/vars';
+@import 'partials/mixins';
+
+/* --------------------------------------
+ * Basic styles
+ * --------------------------------------
+ */
+
+body {
+  font-size: $fontSize;
+}
+
+ul,
+ol,
+dl {
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+label,
+input[type="button"],
+input[type="submit"] {
+  font-family: $fontFamilyMain;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="search"],
+input[type="password"] {
+  font-family: $fontFamilyMain;
+}
+
+
+/* Base Layout
+----------------------------------------- */
+
+.column-action {
+  flex-direction: column;
+  justify-content: space-between;
+  transition: $responsiveAnimation;;
+  display: flex;
+  height: 100vh;
+  width: $headerColumnWidth;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transition: all 0.5s ease;
+  background: $white;
+  border-right: $border;
+
+  @include mobile_size {
+    width: 100%;
+    border-right: none;
+    border-bottom: $border;
+    height: auto;
+  }
+}
+
+/* Open Nav/Search styles */
+.open-nav .column-action {
+  left: $headerColumnWidth;
+  background: $dark;
+  @include mobile_size {
+    left: auto;
+  }
+}
+
+.column-content {
+  transition: $responsiveAnimation;;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding-left: $headerColumnWidth + $borderWidth;
+  padding-bottom: $footerHeight; // Footer
+
+  @include mobile_size {
+    padding-left: 0;
+    padding-top: $headerHeightMobile;
+  }
+}

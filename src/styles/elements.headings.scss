@@ -1,0 +1,48 @@
+@import 'partials/vars';
+@import 'partials/mixins';
+
+/* --------------------------------------
+ * Headings
+ * --------------------------------------
+ */
+
+.heading-block {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1em;
+  margin: 0;
+  padding: 0.5em;
+  background: $dark;
+  color: $white;
+  border-bottom: $border;
+}
+
+
+.heading-lines {
+  @include serifed_font;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  letter-spacing: 0.1em;
+}
+
+.heading-lines::after,
+.heading-lines::before {
+  height: 1px;
+  position: relative;
+  display: inline-block;
+  content: "";
+  width: 50%;
+  background: $dark;
+  vertical-align: middle;
+}
+
+.heading-lines::before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.heading-lines::after {
+  left: 0.5em;
+  margin-right: -50%;
+}
