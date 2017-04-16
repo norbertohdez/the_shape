@@ -1,0 +1,20 @@
+@import '../../../styles/partials/vars';
+@import '../../../styles/partials/mixins';
+
+/* Social Links
+----------------------------------------- */
+
+.nav-social {
+  display: flex;
+  transition: $responsiveAnimation;;
+  flex-direction: column;
+  @include mobile_size {
+    margin-top: 2em;
+  }
+}
+
+.nav-social__link {
+  height: 2.5em;
+  width: 2.5em;
+  display: block;
+}

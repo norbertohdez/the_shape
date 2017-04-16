@@ -1,0 +1,120 @@
+//@TODO: Create component for forms and fields
+@import 'partials/vars';
+@import 'partials/mixins';
+
+/* Input type
+----------------------------------------- */
+
+.form-field {
+  box-sizing: border-box;
+  transition: $responsiveAnimation;
+  max-width: 100%;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: none;
+  font-size: 1.25em;
+  padding: 0.5em;
+  color: $dark;
+  background: transparent;
+  border-bottom: 2px solid $blue;
+  @include iphone6_size {
+    max-width: 195px;
+  }
+}
+
+.form-field:focus {
+  outline: 0;
+  color: $dark;
+  background: transparent;
+  border-bottom-color: $dark;
+}
+
+.form-field::placeholder {
+  color: #999;
+  font-style: normal;
+}
+
+// error status
+.form-field--error,
+.form-field--error:focus {
+  border-color: $red;
+}
+
+
+/* Call to action input field
+----------------------------------------- */
+
+.form-field--call-to-action {
+  text-align: center;
+  display: block;
+  margin: 1em auto 1.25em;
+  font-size: 1.25em;
+  width: $callToActionItemsWidth;
+}
+
+.open-nav .form-field--call-to-action {
+  color: $white;
+}
+
+.open-nav .form-field--call-to-action:focus {
+  color: $white;
+  border-bottom-color: $white;
+}
+
+
+/* Search input field
+----------------------------------------- */
+
+//@TODO: evaluate extend
+.form-field-search {
+  @extend .form-field;
+  width: calc(100% - #{$fontSizeSearchBar});
+  overflow: hidden;
+  color: $white;
+  background: $blue;
+  font-size: inherit;
+  padding: 0.5em 0.25em;
+  border: none;
+  @include mobile_size {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+  }
+}
+
+.form-field-search::placeholder {
+  color: $white;
+}
+
+/* Fake Checkbox
+----------------------------------------- */
+
+$checkboxWidth: 30px;
+
+.form-checkbox__cont {
+  display: inline-block;
+  vertical-align: middle;
+  width: $checkboxWidth;
+  height: $checkboxWidth;
+  margin-right: -0.25em;
+}
+
+.form-checkbox-label {
+  margin-left: 0.5em;
+  @include iphone6_size {
+    margin-left: 0.1em;
+  }
+}
+
+.form-checkbox:checked + .form-checkbox__cont .form-checkbox__svg--checked {
+  display: block;
+}
+
+.form-checkbox + .form-checkbox__cont .form-checkbox__svg--checked,
+.form-checkbox:checked + .form-checkbox__cont .form-checkbox__svg--unchecked {
+  display: none;
+}
+
+.form-checkbox:focus + .form-checkbox__cont .form-checkbox__svg,
+.form-checkbox:active + .form-checkbox__cont .form-checkbox__svg {
+  fill: $blue;
+}

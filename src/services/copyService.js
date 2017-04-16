@@ -1,7 +1,12 @@
 export default () => {
   return {
-    'apoloPrice': 'for only 20 usd',
-    'apoloInputPlaceholder': 'Type your site\'s URL',
-    'apoloBtnLabel': 'PUBLISH NOW'
+    'ApoloForm': {
+      'PRICE_TEXT': 'for only 20 usd',
+      'INPUT_PLACEHOLDER': 'Type your site\'s URL',
+      'BTN_LABEL': 'PUBLISH NOW'
+    },
+    'NavPanel': {
+      'SOCIAL_LINKS_TITLE': 'Find us in social media'
+    }
   }
 }

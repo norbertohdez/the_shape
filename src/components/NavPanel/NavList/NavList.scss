@@ -1,0 +1,37 @@
+@import '../../../styles/partials/vars';
+@import '../../../styles/partials/mixins';
+
+.nav-list {
+  flex-direction: column;
+  display: flex;
+  margin: 0;
+  @include mobile_landscape_size {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.nav-list__item {
+  margin: 0.5em;
+  @include mobile_landscape_size {
+    flex-direction: row;
+    margin: 0.25em 0.1em;
+    width: 48%;
+  }
+}
+
+.nav__link {
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.25em;
+  padding: 0.25em 0.5em;
+  border-bottom: $borderEmphasys;
+  color: $blue;
+  text-transform: uppercase;
+}
+
+.nav__link:active,
+.nav__link--active {
+  border-color: $white;
+  color: $white;
+}
