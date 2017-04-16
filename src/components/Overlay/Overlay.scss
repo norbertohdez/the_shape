@@ -1,0 +1,28 @@
+@import '../../styles/partials/vars';
+
+/* Overlay
+----------------------------------------- */
+
+.overlay {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: $dark;
+  opacity: 0;
+  z-index: -1;
+}
+
+.overlay--open,
+.open-nav .overlay,
+.open-search .overlay {
+  opacity: 0.6;
+  z-index: 3;
+  transition: opacity ease 1s;
+}
+
+.overlay--open-nav,
+.open-nav .overlay {
+  z-index: 2;
+}
