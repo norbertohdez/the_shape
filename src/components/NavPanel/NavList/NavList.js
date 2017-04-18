@@ -9,9 +9,13 @@ import navService from '../../../services/navService';
 
 class NavList extends Component {
 
-  render() {
-
-    let navList = (navService().NavList).map((item) => {
+  /**
+   * Takes array and iterates to render inner list markup
+   * @param   {object[]} items - Links to render
+   * @returns {object} JSX markup
+   */
+  getNavList(items) {
+    return items.map((item) => {
       let cssClasses = classNames({
         'nav__link': true,
         'nav__link--active': item.isActive
@@ -24,15 +28,16 @@ class NavList extends Component {
         </li>
       )
     });
+  }
 
+  render() {
     return (
       <nav>
         <ul className="nav-list">
-          {navList}
+          {this.getNavList(navService().NavList)}
         </ul>
       </nav>
     )
-
   }
 
 }
