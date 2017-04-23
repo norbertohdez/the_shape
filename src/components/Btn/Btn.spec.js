@@ -41,8 +41,8 @@ describe('<Btn />', ()=>{
   it('Should render the text in an Accessible tag when "onlyIcon" is true', () => {
     let instance = TestUtils.renderIntoDocument(<Btn label="Test" iconId="facebook" onlyIcon={true} />);
     let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.childNodes[0].className.match(/\bt-accessible\b/));
-    expect(el.childNodes[0].textContent).to.equal('Test');
+    assert.ok(el.firstChild.className.match(/\bt-accessible\b/));
+    expect(el.firstChild.textContent).to.equal('Test');
   });
 
   it('Should render SvgSprite\'s svg component inside', () => {

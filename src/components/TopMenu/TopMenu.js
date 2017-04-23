@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import TopMenuItem from './TopMenuItem';
+import TopMenuItem from './TopMenuItem/TopMenuItem';
 
 import './TopMenu.css';
 

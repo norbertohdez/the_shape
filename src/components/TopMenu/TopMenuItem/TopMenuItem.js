@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './TopMenuItem.css';
+
 /* CORE -------------------------------------- */
 
 class TopMenuItem extends Component {
@@ -48,8 +50,9 @@ class TopMenuItem extends Component {
 }
 
 TopMenuItem.propTypes = {
-  toggleSearchBar:  PropTypes.func,
-  toggleNav:        PropTypes.func
+  action: PropTypes.func,
+  iconId: PropTypes.oneOf(['hamburguer', 'zoom']).isRequired,
+  label:  PropTypes.string.isRequired
 };
 
 export default TopMenuItem;
