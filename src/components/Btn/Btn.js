@@ -40,8 +40,8 @@ class Btn extends Component {
 
       'btn--mini':           props.size === 'mini',
       'btn--full':           props.size === 'full',
-      'btn--call-to-action': props.size === "callToAction",
-      'btn--load-more':      props.size === "loadMore",
+      'btn--call-to-action': props.size === 'callToAction',
+      'btn--load-more':      props.size === 'loadMore',
 
       'btn--i':              props.iconId && this.props.onlyIcon,
       'btn--has-i':          props.iconId && !this.props.onlyIcon,
@@ -86,11 +86,11 @@ class Btn extends Component {
     let output = []
     // Btn w/icon
     if (props.iconId) {
-      output.push(<SvgSprite svgClasses="btn__i" iconId={props.iconId} />)
+      output.push(<SvgSprite key="1" svgClasses="btn__i" iconId={props.iconId} />)
     }
     // No-text Btn w/icon
     if (props.onlyIcon) {
-      output.unshift(<span className="t-accessible">{props.label}</span>)
+      output.unshift(<span key="2" className="t-accessible">{props.label}</span>)
     }
     // Only text insidebtn
     else {
@@ -127,16 +127,14 @@ class Btn extends Component {
 Btn.propTypes = {
   label:    PropTypes.string.isRequired,
   href:     PropTypes.string,
-  size:     PropTypes.oneOf(['normal', 'mini', 'full', 'callToAction', 'loadMore']),
+  size:     PropTypes.oneOf(['mini', 'full', 'callToAction', 'loadMore']),
   type:     PropTypes.oneOf(['button', 'submit']),
   onlyIcon: PropTypes.bool,
   iconId:   PropTypes.oneOf(getIconIdList()),
-  theme:    PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'mint'])
+  theme:    PropTypes.oneOf(['secondary', 'tertiary', 'mint'])
 };
 
 Btn.defaultProps = {
-  size:  'normal',
-  theme: 'primary',
   type:  'button'
 };
 
