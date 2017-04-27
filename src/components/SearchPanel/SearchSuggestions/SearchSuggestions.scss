@@ -1,0 +1,44 @@
+@import '../../../styles/partials/settings.vars';
+@import '../../../styles/partials/tools.mixins';
+
+
+.search-bar {
+  display: flex;
+  font-size: 3em;
+  border-bottom: $borderWidth solid $white;
+  @include mobile_size {
+    font-size: 1.5em;
+  }
+}
+
+.search-bar__close {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 0;
+  background: $blue;
+  width: 5em;
+  margin: 0;
+  padding: 0.2em;
+  min-height: 100%;
+}
+
+/* Search input field
+----------------------------------------- */
+
+.search-bar__field {
+  width: 100%;
+  overflow: hidden;
+  color: $white;
+  background: $blue;
+  font-size: inherit;
+  padding: 0.5em 0.25em;
+  border: none;
+  @include mobile_size {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+  }
+}
+
+.search-bar__field::placeholder {
+  color: $white;
+}

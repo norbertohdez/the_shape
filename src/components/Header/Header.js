@@ -16,7 +16,7 @@ class Header extends Component {
         <header className="l-ra l-bb">
           <TopMenu
             toggleNav={this.props.toggleNav}
-            toggleSearchBar={this.props.toggleSearchBar}
+            toggleSearchPanel={this.props.toggleSearchPanel}
           />
           <Logo />
           <ApoloForm />
@@ -29,7 +29,7 @@ class Header extends Component {
 
 Header.propTypes = {
   toggleNav:       PropTypes.func,
-  toggleSearchBar: PropTypes.func
+  toggleSearchPanel: PropTypes.func
 };
 
 export default Header;

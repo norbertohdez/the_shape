@@ -1,0 +1,13 @@
+.columns-list {
+  columns: 220px 4;
+  column-gap: 1em;
+}
+
+.columns-list-min2 {
+  columns: 140px 4;
+  column-gap: 1em;
+}
+
+.columns-list > * {
+  transform: translateZ(0);
+}

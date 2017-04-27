@@ -1,6 +1,4 @@
 //@TODO: Create component for forms and fields
-@import 'partials/vars';
-@import 'partials/mixins';
 
 /* Input type
 ----------------------------------------- */
@@ -62,28 +60,7 @@
 }
 
 
-/* Search input field
------------------------------------------ */
 
-//@TODO: evaluate extend
-.form-field-search {
-  @extend .form-field;
-  width: calc(100% - #{$fontSizeSearchBar});
-  overflow: hidden;
-  color: $white;
-  background: $blue;
-  font-size: inherit;
-  padding: 0.5em 0.25em;
-  border: none;
-  @include mobile_size {
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
-  }
-}
-
-.form-field-search::placeholder {
-  color: $white;
-}
 
 /* Fake Checkbox
 ----------------------------------------- */

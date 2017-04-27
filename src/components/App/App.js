@@ -14,7 +14,7 @@ class App extends Component {
       openSearchBar: false
     }
     this.toggleNav = this.toggleNav.bind(this);
-    this.toggleSearchBar = this.toggleSearchBar.bind(this);
+    this.toggleSearchPanel = this.toggleSearchPanel.bind(this);
   }
 
   /**
@@ -29,7 +29,7 @@ class App extends Component {
   /**
    * Toggles state for tracking when nav search opens
    */
-  toggleSearchBar() {
+  toggleSearchPanel() {
     this.setState({
       openSearchBar: !this.state.openSearchBar
     })
@@ -46,7 +46,7 @@ class App extends Component {
 
     return (
       <div className={openClasses}>
-        <Page toggleNav={this.toggleNav} toggleSearchBar={this.toggleSearchBar} />
+        <Page toggleNav={this.toggleNav} toggleSearchPanel={this.toggleSearchPanel} />
       </div>
   );
   }

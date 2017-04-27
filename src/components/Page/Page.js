@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Overlay from '../Overlay/Overlay';
+import SearchPanel from '../SearchPanel/SearchPanel';
 
 
 /* CORE -------------------------------------- */
@@ -13,13 +14,10 @@ class Page extends Component {
     return (
       <div>
         <div className="column-action">
-         <Header toggleNav={this.props.toggleNav} toggleSearchBar={this.props.toggleSearchBar} />
+         <Header toggleNav={this.props.toggleNav} toggleSearchPanel={this.props.toggleSearchPanel} />
         </div>
         <div className="column-content">
-          <h1>This is the Home Page</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <SearchPanel toggleSearchPanel={this.props.toggleSearchPanel} />
         </div>
         <Overlay />
       </div>
@@ -31,7 +29,7 @@ class Page extends Component {
 Page.propTypes = {
   className:       PropTypes.string,
   toggleNav:       PropTypes.func,
-  toggleSearchBar: PropTypes.func
+  toggleSearchPanel: PropTypes.func
 };
 
 export default Page;

@@ -13,7 +13,7 @@ class TopMenu extends Component {
     return (
       <ul className="top-menu l-p--xs l-m0">
         <TopMenuItem action={this.props.toggleNav} iconId="hamburguer" label="Menu" />
-        <TopMenuItem action={this.props.toggleSearchBar} iconId="zoom" label="Search" />
+        <TopMenuItem action={this.props.toggleSearchPanel} iconId="zoom" label="Search" />
       </ul>
     )
   }
@@ -23,7 +23,7 @@ class TopMenu extends Component {
 
 TopMenu.propTypes = {
   toggleNav:       PropTypes.func,
-  toggleSearchBar: PropTypes.func
+  toggleSearchPanel: PropTypes.func
 };
 
 export default TopMenu;

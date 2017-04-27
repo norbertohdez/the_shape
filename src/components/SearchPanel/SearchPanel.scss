@@ -1,0 +1,41 @@
+@import '../../styles/partials/settings.vars';
+
+.search-panel {
+  box-sizing: border-box;
+  transition: $responsiveAnimation;;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate3d(0, -110%, 0);
+  width: 100%;
+  z-index: 4;
+  background: $blue;
+}
+
+
+/* Search open
+----------------------------------------- */
+
+.open-search .search-panel {
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* Search open
+----------------------------------------- */
+
+.open-search .search-panel {
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* Suggestions list
+----------------------------------------- */
+
+.search__link {
+  color: $dark;
+  background: $blueLight;
+  display: inline-block;
+  padding: 0.25em;
+  border: 1px solid $white;
+}
