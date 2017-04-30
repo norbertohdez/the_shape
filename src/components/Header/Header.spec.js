@@ -1,8 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
+
 import Header from './Header';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Header />, div);
+chai.use(chaiEnzyme());
+
+describe('<Header />', () => {
+
+  const wrapper = mount(<Header />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('header')).to.have.length(1);
+  });
+
+  it('Should render NavPanel inside', () => {
+    expect(wrapper.find('NavPanel')).to.have.length(1);
+  });
+
 });

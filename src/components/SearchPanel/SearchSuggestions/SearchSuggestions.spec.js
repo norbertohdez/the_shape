@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import { expect } from 'chai';
+
 import SearchSuggestions from './SearchSuggestions';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<SearchSuggestions />, div);
+describe('<SearchSuggestions />', () => {
+
+  const wrapper = mount(<SearchSuggestions />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('div.bg-white')).to.have.length(1);
+  });
 });

@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import { expect } from 'chai';
+
 import SearchPanel from './SearchPanel';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<SearchPanel />, div);
+describe('<SearchPanel />', () => {
+
+  const wrapper = mount(<SearchPanel />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('.search-panel')).to.have.length(1);
+  });
 });

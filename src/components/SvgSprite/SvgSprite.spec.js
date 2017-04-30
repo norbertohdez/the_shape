@@ -1,34 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-dom/test-utils';
-import { assert, expect } from 'chai';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
 
-import SvgSprite from './SvgSprite'
+import SvgSprite from './SvgSprite';
 
-describe('<SvgSprite />', ()=>{
+chai.use(chaiEnzyme());
+
+describe('<SvgSprite />', () => {
 
   it('Should render svg tag inside', () => {
-    let instance = TestUtils.renderIntoDocument(<SvgSprite iconId="facebook" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.innerHTML.match(/\bsvg\b/));
+    const wrapper = mount(<SvgSprite iconId="facebook" />);
+    expect(wrapper.find('svg')).to.be.length(1);
   });
 
   it('Should pass svgClasses to svg tag class name inside', () => {
-    let instance = TestUtils.renderIntoDocument(<SvgSprite svgClasses="btn__i" iconId="facebook" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.equal(el.getAttribute('class'), 'btn__i');
+    const wrapper = mount(<SvgSprite svgClasses="btn__i" iconId="facebook" />);
+    expect(wrapper.find('.btn__i')).to.be.length(1);
   });
 
   it('Should have viewBox of \'0 0 100 100\' by default', () => {
-    let instance = TestUtils.renderIntoDocument(<SvgSprite iconId="facebook" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.equal(el.getAttribute('viewBox'), '0 0 100 100');
+    const wrapper = mount(<SvgSprite iconId="facebook" />);
+    expect(wrapper.find('svg')).to.have.attr('viewBox', '0 0 100 100')
   });
 
   it('Should complete viewBox attribute from props passed', () => {
-    let instance = TestUtils.renderIntoDocument(<SvgSprite viewBox="200 200" iconId="facebook" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.equal(el.getAttribute('viewBox'), '0 0 200 200');
+    const wrapper = mount(<SvgSprite iconId="facebook" viewBox="200 200" />);
+    expect(wrapper.find('svg')).to.have.attr('viewBox', '0 0 200 200')
   });
-
 });

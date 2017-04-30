@@ -1,72 +1,67 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-dom/test-utils';
-import { assert, expect } from 'chai';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
 
 import Btn from './Btn';
-import SvgSprite from '../SvgSprite/SvgSprite'
 
-describe('<Btn />', ()=>{
+chai.use(chaiEnzyme());
+
+describe('<Btn />', () => {
 
   it('Should take its inner text from label property', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" />);
-    let el = ReactDOM.findDOMNode(instance);
-    expect(el.textContent).to.equal('Test');
+    const wrapper = mount(<Btn label="Test" />);
+    expect(wrapper.find('.btn')).to.have.html().match(/Test/);
   });
 
   it('Should render type as button by default', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.equal(el.getAttribute('type'), 'button');
+    const wrapper = mount(<Btn label="Test" />);
+    expect(wrapper.find('.btn')).to.have.attr('type', 'button')
   });
 
   it('Should render an anchor due to href presence', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" href="#" />);
-    let el = ReactDOM.findDOMNode(instance);
-    expect(el.nodeName).to.equal('A');
+    const wrapper = mount(<Btn label="Test" href="#" />);
+    expect(wrapper.find('a')).to.have.length(1)
   });
 
   it('Should pass href attribute to anchor', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" href="#" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.equal(el.getAttribute('href'), '#');
+    const wrapper = mount(<Btn label="Test" href="#" />);
+    expect(wrapper.find('.btn')).to.have.attr('href', '#')
   });
 
   it('Should pass type attribute to button tag', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" type="submit" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.equal(el.getAttribute('type'), 'submit');
+    const wrapper = mount(<Btn label="Test" type="submit" />);
+    expect(wrapper.find('.btn')).to.have.attr('type', 'submit')
   });
 
   it('Should render the text in an Accessible tag when "onlyIcon" is true', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" iconId="facebook" onlyIcon={true} />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.firstChild.className.match(/\bt-accessible\b/));
-    expect(el.firstChild.textContent).to.equal('Test');
+    const wrapper = mount(<Btn label="Test" iconId="facebook" onlyIcon={true} />);
+    expect(wrapper.find('.t-accessible')).to.have.html().match(/Test/);
   });
 
   it('Should render SvgSprite\'s svg component inside', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" iconId="facebook" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.innerHTML.match(/\bsvg\b/));
+    const wrapper = mount(<Btn label="Test" iconId="facebook" />);
+    expect(wrapper.find('svg')).to.have.length(1)
   });
 
   it('Should render the btn sized mini', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" size="mini" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.className.match(/\bbtn--mini\b/));
+    const wrapper = mount(<Btn label="Test" size="mini" />);
+    expect(wrapper.find('.btn--mini')).to.have.length(1)
   });
 
   it('Should render the btn themed mint', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" theme="mint" />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.className.match(/\bbtn--mint\b/));
+    const wrapper = mount(<Btn label="Test" theme="mint" />);
+    expect(wrapper.find('.btn--mint')).to.have.length(1)
   });
 
   it('Should render disabled btn', () => {
-    let instance = TestUtils.renderIntoDocument(<Btn label="Test" disabled />);
-    let el = ReactDOM.findDOMNode(instance);
-    assert.ok(el.className.match(/\bbtn--disabled\b/));
+    const wrapper = mount(<Btn label="Test" disabled />);
+    expect(wrapper.find('.btn')).to.be.disabled();
+  });
+
+  it('Should render anchor \'disabled\' by class', () => {
+    const wrapper = mount(<Btn label="Test" href="#" disabled />);
+    expect(wrapper.find('a')).to.have.className('btn--disabled');
   });
 
 });

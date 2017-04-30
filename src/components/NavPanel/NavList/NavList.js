@@ -21,7 +21,7 @@ class NavList extends Component {
         'nav__link--active': item.isActive
       });
       return (
-        <li key={item.id.toString()} className="nav-list__item">
+        <li key={items.indexOf(item).toString()} className="nav-list__item">
           <a href={item.link} className={cssClasses}>
             {item.label}
           </a>

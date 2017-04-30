@@ -5,7 +5,6 @@ import './NavSocialLinks.css';
 import SvgSprite from '../../SvgSprite/SvgSprite';
 
 import navService from '../../../services/navService';
-import copyService from '../../../services/copyService';
 
 /* CORE -------------------------------------- */
 
@@ -19,7 +18,7 @@ class NavSocialLinks extends Component {
   getSocialLinks(items) {
     return items.map((item) => {
       return (
-        <li key={item.id.toString()} className="l-m1">
+        <li key={items.indexOf(item).toString()} className="l-m1">
           <a href={item.link} target="_blank" className="nav-social__link">
             <span className="t-accessible">{item.label}</span>
             <SvgSprite svgClasses="fill-blue" iconId={item.iconId} />
@@ -32,9 +31,7 @@ class NavSocialLinks extends Component {
   render() {
     return (
       <div className="nav-social">
-        <p className="t-up t-scale-75d t-c-gray l-p1 l-m0">
-          { copyService().NavPanel.SOCIAL_LINKS_TITLE }
-        </p>
+        <p className="t-up t-scale-75d t-c-gray l-p1 l-m0">Find us in social media</p>
         <ul className="l-flex l-m0">
           { this.getSocialLinks(navService().NavSocialLinks) }
         </ul>

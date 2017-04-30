@@ -20,7 +20,6 @@ class TopMenu extends Component {
 
 }
 
-
 TopMenu.propTypes = {
   toggleNav:       PropTypes.func,
   toggleSearchPanel: PropTypes.func

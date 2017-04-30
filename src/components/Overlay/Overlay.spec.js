@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
+
 import Overlay from './Overlay';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Overlay />, div);
+chai.use(chaiEnzyme());
+
+describe('<Overlay />', () => {
+
+  const wrapper = mount(<Overlay />);
+  it('Should render main div', () => {
+    expect(wrapper.find('.overlay')).to.have.length(1);
+  });
+
 });

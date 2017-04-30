@@ -1,8 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
+
 import NavPanel from './NavPanel';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<NavPanel />, div);
+chai.use(chaiEnzyme());
+
+describe('<NavPanel />', () => {
+
+  const wrapper = mount(<NavPanel />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('.nav-panel')).to.have.length(1);
+  });
+
 });

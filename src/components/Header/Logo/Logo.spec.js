@@ -1,8 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
+
 import Logo from './Logo';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Logo />, div);
+chai.use(chaiEnzyme());
+
+describe('<Logo />', () => {
+
+  const wrapper = mount(<Logo />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('.logo')).to.have.length(1);
+  });
+
+  it('Should render anchor link inside', () => {
+    expect(wrapper.find('a')).to.have.length(1);
+  });
+
 });

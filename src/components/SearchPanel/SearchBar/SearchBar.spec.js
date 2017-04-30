@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import { expect } from 'chai';
+
 import SearchBar from './SearchBar';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<SearchBar />, div);
+describe('<SearchBar />', () => {
+
+  const wrapper = mount(<SearchBar />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('.search-bar')).to.have.length(1);
+  });
 });

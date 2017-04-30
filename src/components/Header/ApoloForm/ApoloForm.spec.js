@@ -1,8 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount, render, shallow } from 'enzyme';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
+
 import ApoloForm from './ApoloForm';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<ApoloForm />, div);
+chai.use(chaiEnzyme());
+
+describe('<ApoloForm />', () => {
+
+  const wrapper = mount(<ApoloForm />);
+
+  it('Should render main container', () => {
+    expect(wrapper.find('.apolo')).to.have.length(1);
+  });
+
 });
