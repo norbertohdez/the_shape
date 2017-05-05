@@ -1,0 +1,37 @@
+@import '../../styles/partials/settings.vars';
+@import '../../styles/partials/tools.mixins';
+
+.site {
+  box-sizing: border-box;
+  transition: $responsiveAnimation;
+  background: $white;
+  padding: 1em;
+  border-bottom: $border;
+  width: 100%;
+  @include iphone_plus_landscape_size {
+    @include cols_settings_2;
+  }
+  @include laptop_size {
+    @include cols_settings_2;
+  }
+  @include large_screen_size {
+    @include cols_settings_3;
+  }
+}
+
+.site--feat {
+  @include large_screen_size {
+    @include cols_settings_2;
+  }
+}
+
+/* Author
+----------------------------------------- */
+
+.author-small-img {
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.2em;
+}

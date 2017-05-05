@@ -61,10 +61,10 @@ class App extends Component {
         <div className="column-content">
           <SearchPanel toggleSearchPanel={this.toggleSearchPanel} />
           <Router>
-            <div>
+            <main>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
-            </div>
+            </main>
           </Router>
         </div>
         <Overlay />

@@ -1,0 +1,40 @@
+@import '../../../styles/partials/settings.vars';
+@import '../../../styles/partials/tools.mixins';
+
+/* Thumb Cover
+----------------------------------------- */
+
+.sitecover {
+  box-sizing: border-box;
+  transition: all 0.2s ease-out;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $darkAlpha;
+  padding: 0.5em;
+  position: absolute;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.no-touch .thumb:hover .sitecover {
+  left: 0;
+}
+
+
+/* Timestamp
+----------------------------------------- */
+
+.sitecover__time {
+  background: $dark;
+  padding: 1em;
+  font-size: 0.5em;
+}
+
+.sitecover__time__timestamp {
+  display: block;
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 0.1em;
+}

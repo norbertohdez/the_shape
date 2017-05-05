@@ -1,0 +1,50 @@
+@import '../../../styles/partials/settings.vars';
+@import '../../../styles/partials/tools.mixins';
+
+.thumb__img {
+  transition: $responsiveAnimation;;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.thumb__cell {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.thumb__cell--mobile {
+  display: none;
+}
+
+@include large_screen_size {
+  .site--feat .thumb__cell {
+    width: 76.82%;
+  }
+
+  .site--feat .thumb__cell--mobile {
+    display: block;
+    width: 23.18%;
+    border-left: 0.5em $white solid;
+  }
+}
+
+.no-touch .thumb:hover .thumb__img {
+  filter: blur(4px);
+  animation: pump-blur 0.3s ease none 1 normal;
+}
+
+@keyframes pump-blur {
+  0% {
+    filter: blur(0);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    filter: blur(4px);
+    transform: scale(1);
+  }
+}

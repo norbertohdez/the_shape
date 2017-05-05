@@ -1,0 +1,52 @@
+@import '../../../styles/partials/settings.vars';
+
+.siteshare {
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+
+.siteshare__list {
+  border-left: 1px solid $white;
+}
+
+.siteshare__btn,
+.siteshare__copy {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  display: block;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+}
+
+.siteshare__copy {
+  transition: $responsiveAnimation;;
+  border-radius: $borderRadius;
+  border: none;
+  background: $white;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: $dark;
+  padding: 0.25em 0.5em;
+  height: auto;
+  width: auto;
+}
+
+.no-touch .siteshare__copy:hover {
+  background: $blue;
+}
+
+.siteshare__svg {
+  transition: $responsiveAnimation;;
+  margin: 0;
+  display: block;
+  fill: $white;
+}
+
+.no-touch .siteshare__svg:hover {
+  fill: $blue;
+}

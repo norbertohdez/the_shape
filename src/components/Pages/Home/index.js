@@ -1,9 +1,15 @@
 import React from 'react';
+import SitesList from '../../SitesList';
 
 // -------------------------------------
 
-function About() {
-  return <h1>Home Page Content</h1>;
+function Home() {
+  return (
+    <section>
+      <h2 className="heading-block">Sites Featured Today</h2>
+      <SitesList />
+    </section>
+  );
 }
 
-export default About;
+export default Home;
