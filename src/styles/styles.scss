@@ -1,12 +1,17 @@
+/* Settings and tools */
 @import 'partials/settings.vars';
 @import 'partials/tools.mixins';
 
+/* Generic */
 @import 'partials/generic.atomic';
 @import 'partials/generic.base';
 
+/* Elements and Objects */
 @import 'partials/elements.headings';
-@import 'partials/elements.columns';
+@import 'partials/elements.links';
+@import 'partials/objects.columns';
 
+/* Trumps */
 @import 'partials/trumps';
 
 @import 'partials/TMP.forms';

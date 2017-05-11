@@ -4,7 +4,7 @@
 /* Thumb Cover
 ----------------------------------------- */
 
-.sitecover {
+.cover {
   box-sizing: border-box;
   transition: all 0.2s ease-out;
   left: -100%;
@@ -18,7 +18,7 @@
   text-transform: uppercase;
 }
 
-.no-touch .thumb:hover .sitecover {
+.no-touch .webitem__preview:hover .cover {
   left: 0;
 }
 
@@ -26,13 +26,13 @@
 /* Timestamp
 ----------------------------------------- */
 
-.sitecover__time {
+.cover__date {
   background: $dark;
   padding: 1em;
   font-size: 0.5em;
 }
 
-.sitecover__time__timestamp {
+.cover__date__timestamp {
   display: block;
   font-weight: bold;
   font-size: 2em;

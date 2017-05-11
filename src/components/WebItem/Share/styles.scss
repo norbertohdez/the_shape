@@ -1,18 +1,18 @@
 @import '../../../styles/partials/settings.vars';
 
-.siteshare {
+.webshare {
   display: block;
   position: absolute;
   bottom: 1em;
   left: 1em;
 }
 
-.siteshare__list {
+.webshare__list {
   border-left: 1px solid $white;
 }
 
-.siteshare__btn,
-.siteshare__copy {
+.webshare__btn,
+.webshare__copy {
   box-sizing: border-box;
   border: 0;
   padding: 0;
@@ -22,7 +22,7 @@
   height: 30px;
 }
 
-.siteshare__copy {
+.webshare__copy {
   transition: $responsiveAnimation;;
   border-radius: $borderRadius;
   border: none;
@@ -36,17 +36,17 @@
   width: auto;
 }
 
-.no-touch .siteshare__copy:hover {
+.no-touch .webshare__copy:hover {
   background: $blue;
 }
 
-.siteshare__svg {
+.webshare__svg {
   transition: $responsiveAnimation;;
   margin: 0;
   display: block;
   fill: $white;
 }
 
-.no-touch .siteshare__svg:hover {
+.no-touch .webshare__svg:hover {
   fill: $blue;
 }

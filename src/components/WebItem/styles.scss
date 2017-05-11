@@ -1,7 +1,7 @@
 @import '../../styles/partials/settings.vars';
 @import '../../styles/partials/tools.mixins';
 
-.site {
+.webitem {
   box-sizing: border-box;
   transition: $responsiveAnimation;
   background: $white;
@@ -19,19 +19,8 @@
   }
 }
 
-.site--feat {
+.webitem--feat {
   @include large_screen_size {
     @include cols_settings_2;
   }
-}
-
-/* Author
------------------------------------------ */
-
-.author-small-img {
-  width: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.2em;
 }

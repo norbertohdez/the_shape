@@ -1,0 +1,35 @@
+/* Regular link
+--------------------------- */
+
+.link {
+  color: $dark;
+  background-color: $blueLight;
+}
+
+/* Underlined
+--------------------------- */
+
+.link-line {
+  color: $dark;
+  border-bottom: 2px solid $blueLight;
+  padding-bottom: 0.025em;
+}
+
+.link-line:active,
+.no-touch .link-line:hover {
+  background: $blueLight;
+  padding-bottom: 0.05em;
+}
+
+/* On image w/border
+--------------------------- */
+
+.link-img {
+  transition: $responsiveAnimation;;
+  border: 1px solid $blue;
+}
+
+.no-touch .link-img:hover,
+.link-img:active {
+  border-color: $dark;
+}

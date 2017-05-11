@@ -2,16 +2,16 @@ import React from 'react';
 import {mount, render, shallow} from 'enzyme';
 import chai, {expect} from 'chai';
 import chaiEnzyme from 'chai-enzyme';
-import SiteCover from './';
+import Cover from './';
 chai.use(chaiEnzyme());
 
 // -------------------------------------
 
-describe('<SiteCover />', () => {
+describe('<Cover />', () => {
 
-  const wrapper = mount(<SiteCover />);
+  const wrapper = mount(<Cover />);
   it('Should render main container', () => {
-    expect(wrapper.find('.sitecover')).to.have.length(1);
+    expect(wrapper.find('.cover')).to.have.length(1);
   });
 
 });

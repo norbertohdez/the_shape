@@ -1,22 +1,22 @@
 import React from 'react';
 import Btn from '../../Btn';
-import SiteShare from '../SiteShare';
+import Share from '../Share';
 import './styles.css';
 
 // -------------------------------------
 
-function SiteCover() {
+function Cover() {
   return (
-  	<div className="sitecover">
-			<div className="sitecover__time">
+  	<div className="cover">
+			<div className="cover__date">
 				Posted on
-				<time className="sitecover__time__timestamp">NOVEMBER 31 2016</time>
+				<time className="cover__date__timestamp">NOVEMBER 31 2016</time>
 			</div>
 			<Btn label="Details" to="#" iconId="plus" />
 			<Btn label="Check it out" to="#" iconId="chain" />
-			<SiteShare />
+			<Share />
 		</div>
   );
 }
 
-export default SiteCover;
+export default Cover;

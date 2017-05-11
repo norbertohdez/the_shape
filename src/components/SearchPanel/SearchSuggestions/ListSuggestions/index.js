@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  elements: PropTypes.array
+  elements: PropTypes.arrayOf(PropTypes.object)
 };
 
 const defaultProps = {
