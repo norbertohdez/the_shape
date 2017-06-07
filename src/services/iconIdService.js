@@ -15,12 +15,15 @@ export default () => {
     'arrow-up',
     'instagram',
     'heart-full',
-    'heart-check',
+    'heart-75',
+    'heart-50',
+    'heart-25',
     'heart-failed',
     'retry-fail',
     'checkbox-check',
     'logo',
     'logo-horizontal',
-    'apolo'
+    'apolo',
+    'close'
   ]
 }

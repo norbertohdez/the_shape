@@ -4,8 +4,8 @@
 /* Container
 --------------------------------- */
 
-.rate--done {
-  padding: 0.1em;
+.rate {
+	width: 40px;
 }
 
 
@@ -37,22 +37,6 @@
   transition: fill 0.2s ease;
 }
 
-.rate__svg--done {
-  fill: #999;
-  animation: pump 0.2s ease none 2 normal;
-
-}
-
-@keyframes pump {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.35);
-  }
-}
-
 /* Rate box
 --------------------------------- */
 
@@ -76,18 +60,7 @@
 /* Open
 ----------------------------------- */
 
-.rate__svg-open,
-.rate--open .rate__svg-close {
-  display: block;
-}
-
-.rate__svg-close,
-.rate--open .rate__svg-open {
-  display: none;
-}
-
-.rate__svg-close,
-.rate__btn--pressed .rate__svg {
+.rate--open .rate__trigger .rate__svg  {
   fill: $blue;
 }
 
@@ -109,10 +82,50 @@
   left: 0;
   width: 100%;
   height: 100%;
-  //background: url(../img/bg_blue-lines.gif);
-  //animation: rate-lines 0.5s linear none infinite normal;
+  @include progress_lines;
 }
 
 .rate--ajax .rate__spinner {
   display: block;
+}
+
+/* Success
+----------------------------------- */
+.rate--done .rate__trigger {
+	pointer-events: none;
+}
+
+.rate--done .rate__trigger::after {
+	position: absolute;
+	content: attr(result);
+	bottom: 0;
+	right: 0;
+	text-align: center;
+  font-size: 1.5em;
+	font-weight: bold;
+	letter-spacing: -0.05em;
+  animation: pump 0.2s ease 0.3s 2 normal;
+  text-shadow: -1px -1px 0 #fff,
+               -1px 0 0 #fff,
+               -1px 1px 0 #fff,
+               0 1px 0 #fff,
+               0 -1px 0 #fff,
+               1px -1px 0 #fff,
+               1px 0 0 #fff,
+               1px 1px 0 #fff;
+}
+
+.rate--done .rate__trigger .rate__svg {
+  fill: $blue;
+  animation: pump 0.2s ease none 2 normal;
+}
+
+@keyframes pump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+  }
 }

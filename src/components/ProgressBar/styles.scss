@@ -53,16 +53,3 @@
   top: 0;
   left: 0;
 }
-
-
-/* Lines animation
-------------------------------------- */
-
-@keyframes rate-lines {
-  0% {
-    background-position: 0;
-  }
-  100% {
-    background-position: 120px;
-  }
-}

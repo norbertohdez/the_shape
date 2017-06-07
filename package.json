@@ -11,6 +11,7 @@
     "chai-enzyme": "^0.6.1",
     "classnames": "^2.2.5",
     "enzyme": "^2.8.2",
+    "flag-icon-css": "^2.8.0",
     "node-sass": "^4.5.2",
     "normalize.css": "^6.0.0",
     "npm-run-all": "^4.0.2",
@@ -22,6 +23,7 @@
   },
   "scripts": {
     "build-css": "node-sass src/ -o src/",
+    "build-svg": "svgstore -o src/img/svg/sprite.svg src/img/svg/src/*.svg",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",

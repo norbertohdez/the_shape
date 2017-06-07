@@ -13,7 +13,7 @@ function Cover() {
 				<time className="cover__date__timestamp">NOVEMBER 31 2016</time>
 			</div>
 			<Btn label="Details" to="#" iconId="plus" />
-			<Btn label="Check it out" to="#" iconId="chain" />
+			<Btn label="Check it out" to="#" iconId="chain" theme="mint" />
 			<Share />
 		</div>
   );

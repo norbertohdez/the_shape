@@ -41,8 +41,8 @@ $disabledBg: $gray;
 }
 
 .btn:active {
-  box-shadow: inset 0 0.12em 0.12em $innerShadow;
-  background: mix($dark, $blue, 2%);
+  box-shadow: inset 0.04em 0.04em 0.1em $innerShadow;
+  background: mix($dark, $blue, 3%);
 }
 
 
@@ -208,6 +208,14 @@ $disabledBg: $gray;
 
 .btn--secondary:active {
   background: mix($dark, $blueLight, 3%);
+}
+
+.btn--secondary .btn__i {
+  fill: $blue;
+}
+
+.btn--secondary:active .btn__i {
+  fill: mix($dark, $blue, 3%);
 }
 
 //tertiary theme
