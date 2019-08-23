@@ -62,8 +62,7 @@ class App extends Component {
           <SearchPanel toggleSearchPanel={this.toggleSearchPanel} />
           <Router>
             <main>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
+              <Route exact path="/the-shape" component={Home} />
             </main>
           </Router>
         </div>

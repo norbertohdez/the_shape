@@ -21,6 +21,7 @@
     "react-scripts": "0.9.5",
     "react-test-renderer": "^15.5.4"
   },
+  "homepage": "./",
   "scripts": {
     "build-css": "node-sass src/ -o src/",
     "build-svg": "svgstore -o src/img/svg/sprite.svg src/img/svg/src/*.svg",
